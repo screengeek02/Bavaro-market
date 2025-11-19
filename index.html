@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bavaro Market | Community Resale Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Community resale for everything</p>
+        <h1>Sell products, services, and talents in minutes.</h1>
+        <p>
+          Bavaro Market is a flexible marketplace inspired by the spirit of
+          OfferUp where neighbors resell electronics, furniture, local services,
+          and unique experiences. Create a profile, pick a category, and start
+          earning.
+        </p>
+        <div class="hero__actions">
+          <a href="#profile" class="btn btn--primary">Create your profile</a>
+          <a href="#listings" class="btn btn--ghost">Browse community posts</a>
+        </div>
+        <div class="hero__stats">
+          <div>
+            <span>3,500+</span>
+            <p>Active sellers</p>
+          </div>
+          <div>
+            <span>150</span>
+            <p>Neighborhoods served</p>
+          </div>
+          <div>
+            <span>24/7</span>
+            <p>Safe messaging</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero__card">
+        <p class="card__eyebrow">Seller spotlight</p>
+        <h3>Macarena's Mobile Spa</h3>
+        <p>Services · Punta Cana</p>
+        <ul>
+          <li>On-demand relaxation sessions</li>
+          <li>Weekend bridal packages</li>
+          <li>Verified & insured</li>
+        </ul>
+        <button class="btn btn--primary">Book a service</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="categories" id="categories">
+        <div class="section__heading">
+          <div>
+            <p class="eyebrow">Categories</p>
+            <h2>Choose the lane that fits your offering.</h2>
+            <p>
+              From handmade goods to subscription services, every post belongs to
+              a curated category so buyers instantly understand what you offer.
+            </p>
+          </div>
+          <div class="filters">
+            <label>
+              <span>Search</span>
+              <input
+                type="search"
+                id="searchInput"
+                placeholder="Find electronics, haircuts, tutoring..."
+              />
+            </label>
+            <label>
+              <span>Category</span>
+              <select id="categoryFilter"></select>
+            </label>
+            <label>
+              <span>Type</span>
+              <select id="typeFilter">
+                <option value="all">All</option>
+                <option value="product">Products</option>
+                <option value="service">Services</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="category-grid" id="categoryGrid"></div>
+      </section>
+
+      <section class="profile" id="profile">
+        <div class="section__heading">
+          <div>
+            <p class="eyebrow">Profile builder</p>
+            <h2>Introduce yourself to buyers.</h2>
+            <p>
+              Create a seller card with your skills, city, and specialties. Use
+              it to attach credibility to every listing you publish.
+            </p>
+          </div>
+        </div>
+        <div class="profile__layout">
+          <form id="profileForm" class="card">
+            <h3>Create a profile</h3>
+            <label>
+              Full name
+              <input type="text" name="name" required placeholder="Ana Velez" />
+            </label>
+            <label>
+              Headline
+              <input
+                type="text"
+                name="headline"
+                required
+                placeholder="Mobile mechanic & diagnostics"
+              />
+            </label>
+            <label>
+              City
+              <input type="text" name="city" required placeholder="Santo Domingo" />
+            </label>
+            <label>
+              Category focus
+              <select name="category" required id="profileCategory"></select>
+            </label>
+            <label>
+              Preferred format
+              <select name="format" required>
+                <option value="product">Product</option>
+                <option value="service">Service</option>
+                <option value="both">Both</option>
+              </select>
+            </label>
+            <label>
+              Short bio
+              <textarea
+                name="bio"
+                rows="3"
+                required
+                placeholder="15+ years of experience helping keep cars running."
+              ></textarea>
+            </label>
+            <button type="submit" class="btn btn--primary">Save profile</button>
+            <p class="form__status" id="profileStatus"></p>
+          </form>
+          <div class="profile__list card">
+            <div class="profile__list-header">
+              <h3>Neighborhood experts</h3>
+              <p>Tap a seller to auto-fill the listing form.</p>
+            </div>
+            <ul id="profileList" class="profile__cards"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="listings" id="listings">
+        <div class="section__heading">
+          <div>
+            <p class="eyebrow">Marketplace</p>
+            <h2>Ready-to-buy listings</h2>
+            <p>
+              Post unlimited items or services. Share delivery options, price,
+              and pickup expectations to keep conversations smooth.
+            </p>
+          </div>
+        </div>
+        <div class="listings__layout">
+          <form id="listingForm" class="card">
+            <h3>Publish a listing</h3>
+            <label>
+              Title
+              <input type="text" name="title" required placeholder="iPhone 13 mini" />
+            </label>
+            <label>
+              Description
+              <textarea
+                name="description"
+                rows="3"
+                required
+                placeholder="Unlocked, 128 GB, includes MagSafe case."
+              ></textarea>
+            </label>
+            <label>
+              Price (USD)
+              <input type="number" name="price" min="0" step="0.01" required />
+            </label>
+            <label>
+              Category
+              <select name="category" required id="listingCategory"></select>
+            </label>
+            <label>
+              Listing type
+              <select name="type" required>
+                <option value="product">Product</option>
+                <option value="service">Service</option>
+              </select>
+            </label>
+            <label>
+              Seller profile
+              <select name="seller" required id="sellerSelect"></select>
+            </label>
+            <label>
+              Availability
+              <input type="text" name="availability" placeholder="Weeknights & weekends" />
+            </label>
+            <button type="submit" class="btn btn--primary">Post listing</button>
+            <p class="form__status" id="listingStatus"></p>
+          </form>
+          <div class="listing__results">
+            <div class="results__header">
+              <h3>Community posts</h3>
+              <p id="resultsCount"></p>
+            </div>
+            <div class="listing-grid" id="listingGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust">
+        <div class="trust__card">
+          <h3>Safety & trust</h3>
+          <ul>
+            <li>Verified badges for ID-checked sellers</li>
+            <li>Two-way reviews after every transaction</li>
+            <li>Secure in-app messaging & payments</li>
+            <li>Dispute resolution team 7 days a week</li>
+          </ul>
+        </div>
+        <div class="trust__cta">
+          <h2>Launch your first listing in under 3 minutes.</h2>
+          <p>
+            Set your availability, meet buyers in a safe public space, and grow
+            your side hustle with a supportive local audience.
+          </p>
+          <a href="#profile" class="btn btn--primary">Get started</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Bavaro Market · Built for community resale.</p>
+      <div class="footer__links">
+        <a href="#categories">Categories</a>
+        <a href="#profile">Profiles</a>
+        <a href="#listings">Listings</a>
+      </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
