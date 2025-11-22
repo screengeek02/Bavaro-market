@@ -1,6 +1,6 @@
 # Bavaro Market
 
-A lightweight, single-page marketplace inspired by OfferUp where neighbors can resell physical products, services, and experiences. The site is built with vanilla HTML, CSS, and JavaScript so you can run it anywhere without a build step.
+A lightweight, single-page Dominican marketplace where neighbors can resell physical products, services, and experiences. The site is built with vanilla HTML, CSS, and JavaScript so you can run it anywhere without a build step.
 
 ## Features
 
