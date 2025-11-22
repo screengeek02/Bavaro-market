@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bavaro Market | Dominican resale community</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__brand">
+        <div class="brand__badge">BM</div>
+        <div>
+          <strong>Bavaro Market</strong>
+          <small>Community market · Dominican pride</small>
+        </div>
+      </div>
+      <div class="site-header__location">
+        <span>Delivering to</span>
+        <button class="btn btn--ghost">Santo Domingo ▾</button>
+      </div>
+      <nav class="site-nav">
+        <a href="#categories">Categories</a>
+        <a href="#profile">Sellers</a>
+        <a href="#listings">Listings</a>
+      </nav>
+      <div class="site-header__actions">
+        <button class="btn btn--ghost">Log in</button>
+        <a href="#listings" class="btn btn--sell">Post listing</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero__copy">
+        <p class="hero__pill">Caribbean-born community marketplace</p>
+        <h1>Resell it your way with Dominican colors.</h1>
+        <p>
+          Turn unused products, skills, and services into pesos. Bavaro Market
+          blends modern marketplace patterns with vibrant red, blue, and white
+          tones to celebrate the DR hustle from Punta Cana to Santo Domingo.
+        </p>
+        <div class="hero__search">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search phones, furniture, braids, tours..."
+          />
+          <button class="btn btn--primary" type="button">Search marketplace</button>
+        </div>
+        <div class="hero__chips">
+          <span>🚗 Rides & Transport</span>
+          <span>💇🏽‍♀️ Beauty Pros</span>
+          <span>📱 Electronics</span>
+          <span>🍽️ Private Chefs</span>
+        </div>
+        <div class="hero__stats">
+          <div>
+            <p>Trusted sellers</p>
+            <strong>3,500+</strong>
+          </div>
+          <div>
+            <p>Listings this week</p>
+            <strong>980</strong>
+          </div>
+          <div>
+            <p>Pro services</p>
+            <strong>210</strong>
+          </div>
+        </div>
+      </div>
+      <div class="hero__card">
+        <p class="card__eyebrow">Featured Santo Domingo post</p>
+        <h3>Dominican flag patio set</h3>
+        <p>
+          Limited run handmade outdoor furniture with navy cushions and red wood
+          stain. Includes local delivery.
+        </p>
+        <ul>
+          <li>Eco mahogany + marine fabric</li>
+          <li>Built by Lola García</li>
+          <li>Message to reserve</li>
+        </ul>
+        <button class="btn btn--sell">View listing</button>
+      </div>
+    </section>
+
+    <main>
+      <section class="categories" id="categories">
+        <div class="section__heading">
+          <div>
+            <p class="eyebrow">Categories</p>
+            <h2>Tap a lane and start posting instantly.</h2>
+            <p>
+              Our curated lineup keeps the experience familiar: swipeable cards,
+              quick stats, and the same trust badges that DR neighbors expect.
+            </p>
+          </div>
+          <div class="filters">
+            <label>
+              <span>Category</span>
+              <select id="categoryFilter"></select>
+            </label>
+            <label>
+              <span>Listing type</span>
+              <select id="typeFilter">
+                <option value="all">All</option>
+                <option value="product">Products</option>
+                <option value="service">Services</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="category-grid" id="categoryGrid"></div>
+      </section>
+
+      <section class="profile" id="profile">
+        <div class="section__heading">
+          <div>
+            <p class="eyebrow">Profile builder</p>
+            <h2>Create the polished seller card buyers trust.</h2>
+            <p>
+              Drop your story, service focus, and barrio. Saved profiles show up
+              next to every listing and keep your brand consistent across posts.
+            </p>
+          </div>
+        </div>
+        <div class="profile__layout">
+          <form id="profileForm" class="card">
+            <h3>Seller identity</h3>
+            <label>
+              Full name
+              <input type="text" name="name" required placeholder="Ana Velez" />
+            </label>
+            <label>
+              Headline
+              <input
+                type="text"
+                name="headline"
+                required
+                placeholder="Mobile mechanic & diagnostics"
+              />
+            </label>
+            <label>
+              City
+              <input type="text" name="city" required placeholder="Santo Domingo" />
+            </label>
+            <label>
+              Category focus
+              <select name="category" required id="profileCategory"></select>
+            </label>
+            <label>
+              Preferred format
+              <select name="format" required>
+                <option value="product">Product</option>
+                <option value="service">Service</option>
+                <option value="both">Both</option>
+              </select>
+            </label>
+            <label>
+              Short bio
+              <textarea
+                name="bio"
+                rows="3"
+                required
+                placeholder="15+ years of experience helping keep cars running."
+              ></textarea>
+            </label>
+            <button type="submit" class="btn btn--primary">Save profile</button>
+            <p class="form__status" id="profileStatus"></p>
+          </form>
+          <div class="profile__list card">
+            <div class="profile__list-header">
+              <h3>Neighborhood experts</h3>
+              <p>Tap a seller to auto-fill the listing form.</p>
+            </div>
+            <ul id="profileList" class="profile__cards"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="listings" id="listings">
+        <div class="section__heading">
+          <div>
+            <p class="eyebrow">Marketplace</p>
+            <h2>Post and browse with a clean, familiar flow.</h2>
+            <p>
+              Compose a listing card, attach a seller profile, and publish. Buyers
+              see pricing, availability, and Dominican-flavored details instantly.
+            </p>
+          </div>
+        </div>
+        <div class="listings__layout">
+          <form id="listingForm" class="card">
+            <h3>Publish a listing</h3>
+            <label>
+              Title
+              <input type="text" name="title" required placeholder="iPhone 13 mini" />
+            </label>
+            <label>
+              Description
+              <textarea
+                name="description"
+                rows="3"
+                required
+                placeholder="Unlocked, 128 GB, includes MagSafe case."
+              ></textarea>
+            </label>
+            <label>
+              Price (USD)
+              <input type="number" name="price" min="0" step="0.01" required />
+            </label>
+            <label>
+              Category
+              <select name="category" required id="listingCategory"></select>
+            </label>
+            <label>
+              Listing type
+              <select name="type" required>
+                <option value="product">Product</option>
+                <option value="service">Service</option>
+              </select>
+            </label>
+            <label>
+              Seller profile
+              <select name="seller" required id="sellerSelect"></select>
+            </label>
+            <label>
+              Availability
+              <input type="text" name="availability" placeholder="Weeknights & weekends" />
+            </label>
+            <button type="submit" class="btn btn--sell">Post listing</button>
+            <p class="form__status" id="listingStatus"></p>
+          </form>
+          <div class="listing__results">
+            <div class="results__header">
+              <h3>Community posts</h3>
+              <p id="resultsCount"></p>
+            </div>
+            <div class="listing-grid" id="listingGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust">
+        <div class="trust__card">
+          <h3>Safety & trust</h3>
+          <ul>
+            <li>Verified badges for ID-checked sellers</li>
+            <li>Two-way reviews after every transaction</li>
+            <li>Secure in-app messaging & payments</li>
+            <li>Dispute resolution team 7 days a week</li>
+          </ul>
+        </div>
+        <div class="trust__cta">
+          <h2>List in 3 minutes. Meet buyers the same day.</h2>
+          <p>
+            Set pickup points, agree in chat, and keep things transparent. Local
+            flavor and clear details build trust fast.
+          </p>
+          <a href="#profile" class="btn btn--primary">Get started</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Bavaro Market · Dominican community resale.</p>
+      <div class="footer__links">
+        <a href="#categories">Categories</a>
+        <a href="#profile">Profiles</a>
+        <a href="#listings">Listings</a>
+      </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
