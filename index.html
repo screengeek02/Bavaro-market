@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bavaro Market | Community Resale Hub</title>
+    <title>Bavaro Market | OfferUp style Dominican resale</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,74 +13,101 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero">
-      <div class="hero__content">
-        <p class="hero__eyebrow">Community resale for everything</p>
-        <h1>Sell products, services, and talents in minutes.</h1>
+    <header class="site-header">
+      <div class="site-header__brand">
+        <div class="brand__badge">BM</div>
+        <div>
+          <strong>Bavaro Market</strong>
+          <small>OfferUp energy · Dominican pride</small>
+        </div>
+      </div>
+      <div class="site-header__location">
+        <span>Delivering to</span>
+        <button class="btn btn--ghost">Santo Domingo ▾</button>
+      </div>
+      <nav class="site-nav">
+        <a href="#categories">Categories</a>
+        <a href="#profile">Sellers</a>
+        <a href="#listings">Listings</a>
+      </nav>
+      <div class="site-header__actions">
+        <button class="btn btn--ghost">Log in</button>
+        <a href="#listings" class="btn btn--sell">Post listing</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero__copy">
+        <p class="hero__pill">OfferUp-inspired · Caribbean marketplace</p>
+        <h1>Resell it the OfferUp way with Dominican colors.</h1>
         <p>
-          Bavaro Market is a flexible marketplace inspired by the spirit of
-          OfferUp where neighbors resell electronics, furniture, local services,
-          and unique experiences. Create a profile, pick a category, and start
-          earning.
+          Turn unused products, skills, and services into pesos. Bavaro Market
+          feels just like OfferUp but with vibrant red, blue, and white tones to
+          celebrate the DR hustle from Punta Cana to Santo Domingo.
         </p>
-        <div class="hero__actions">
-          <a href="#profile" class="btn btn--primary">Create your profile</a>
-          <a href="#listings" class="btn btn--ghost">Browse community posts</a>
+        <div class="hero__search">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search phones, furniture, braids, tours..."
+          />
+          <button class="btn btn--primary" type="button">Search marketplace</button>
+        </div>
+        <div class="hero__chips">
+          <span>🚗 Rides & Transport</span>
+          <span>💇🏽‍♀️ Beauty Pros</span>
+          <span>📱 Electronics</span>
+          <span>🍽️ Private Chefs</span>
         </div>
         <div class="hero__stats">
           <div>
-            <span>3,500+</span>
-            <p>Active sellers</p>
+            <p>Trusted sellers</p>
+            <strong>3,500+</strong>
           </div>
           <div>
-            <span>150</span>
-            <p>Neighborhoods served</p>
+            <p>Listings this week</p>
+            <strong>980</strong>
           </div>
           <div>
-            <span>24/7</span>
-            <p>Safe messaging</p>
+            <p>Pro services</p>
+            <strong>210</strong>
           </div>
         </div>
       </div>
       <div class="hero__card">
-        <p class="card__eyebrow">Seller spotlight</p>
-        <h3>Macarena's Mobile Spa</h3>
-        <p>Services · Punta Cana</p>
+        <p class="card__eyebrow">Featured Santo Domingo post</p>
+        <h3>Dominican flag patio set</h3>
+        <p>
+          Limited run handmade outdoor furniture with navy cushions and red wood
+          stain. Includes local delivery.
+        </p>
         <ul>
-          <li>On-demand relaxation sessions</li>
-          <li>Weekend bridal packages</li>
-          <li>Verified & insured</li>
+          <li>Eco mahogany + marine fabric</li>
+          <li>Built by Lola García</li>
+          <li>Message to reserve</li>
         </ul>
-        <button class="btn btn--primary">Book a service</button>
+        <button class="btn btn--sell">View listing</button>
       </div>
-    </header>
+    </section>
 
     <main>
       <section class="categories" id="categories">
         <div class="section__heading">
           <div>
             <p class="eyebrow">Categories</p>
-            <h2>Choose the lane that fits your offering.</h2>
+            <h2>Tap a lane and start posting like OfferUp.</h2>
             <p>
-              From handmade goods to subscription services, every post belongs to
-              a curated category so buyers instantly understand what you offer.
+              Our curated lineup keeps the experience familiar: swipeable cards,
+              quick stats, and the same trust badges that DR neighbors expect.
             </p>
           </div>
           <div class="filters">
-            <label>
-              <span>Search</span>
-              <input
-                type="search"
-                id="searchInput"
-                placeholder="Find electronics, haircuts, tutoring..."
-              />
-            </label>
             <label>
               <span>Category</span>
               <select id="categoryFilter"></select>
             </label>
             <label>
-              <span>Type</span>
+              <span>Listing type</span>
               <select id="typeFilter">
                 <option value="all">All</option>
                 <option value="product">Products</option>
@@ -96,16 +123,16 @@
         <div class="section__heading">
           <div>
             <p class="eyebrow">Profile builder</p>
-            <h2>Introduce yourself to buyers.</h2>
+            <h2>Create the polished OfferUp-style card buyers trust.</h2>
             <p>
-              Create a seller card with your skills, city, and specialties. Use
-              it to attach credibility to every listing you publish.
+              Drop your story, service focus, and barrio. Saved profiles show up
+              next to every listing and feel identical to OfferUp seller cards.
             </p>
           </div>
         </div>
         <div class="profile__layout">
           <form id="profileForm" class="card">
-            <h3>Create a profile</h3>
+            <h3>Seller identity</h3>
             <label>
               Full name
               <input type="text" name="name" required placeholder="Ana Velez" />
@@ -161,10 +188,10 @@
         <div class="section__heading">
           <div>
             <p class="eyebrow">Marketplace</p>
-            <h2>Ready-to-buy listings</h2>
+            <h2>Post and browse with the same OfferUp flow.</h2>
             <p>
-              Post unlimited items or services. Share delivery options, price,
-              and pickup expectations to keep conversations smooth.
+              Compose a listing card, attach a seller profile, and publish. Buyers
+              see pricing, availability, and Dominican-flavored details instantly.
             </p>
           </div>
         </div>
@@ -207,7 +234,7 @@
               Availability
               <input type="text" name="availability" placeholder="Weeknights & weekends" />
             </label>
-            <button type="submit" class="btn btn--primary">Post listing</button>
+            <button type="submit" class="btn btn--sell">Post listing</button>
             <p class="form__status" id="listingStatus"></p>
           </form>
           <div class="listing__results">
@@ -231,10 +258,10 @@
           </ul>
         </div>
         <div class="trust__cta">
-          <h2>Launch your first listing in under 3 minutes.</h2>
+          <h2>List in 3 minutes. Meet buyers the same day.</h2>
           <p>
-            Set your availability, meet buyers in a safe public space, and grow
-            your side hustle with a supportive local audience.
+            Set pickup points, agree in chat, and keep things transparent. OfferUp
+            familiarity plus Dominican flavor builds trust fast.
           </p>
           <a href="#profile" class="btn btn--primary">Get started</a>
         </div>
@@ -242,7 +269,7 @@
     </main>
 
     <footer>
-      <p>© <span id="year"></span> Bavaro Market · Built for community resale.</p>
+      <p>© <span id="year"></span> Bavaro Market · OfferUp-style community resale.</p>
       <div class="footer__links">
         <a href="#categories">Categories</a>
         <a href="#profile">Profiles</a>
